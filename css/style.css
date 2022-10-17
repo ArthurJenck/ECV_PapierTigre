@@ -1,0 +1,848 @@
+/*--------------------------------------------------
+GLOBAL
+---------------------------------------------------*/
+/* Auteur : Arthur Jenck
+Date : 17/10/22
+Version : 1.0
+Site de l'auteur : http://ajenck.ecv-monsite.fr */
+
+@import url('https://fonts.googleapis.com/css2?family=Sora:wght@100;200;300;400;500;600;700;800&display=swap');
+/* font-family: 'Sora', sans-serif; */
+/* Ma petite police favorie est la Sora, je l'intègre par défaut dans tous mes sites */
+
+/* Pour les couleurs qui seront utilisées à plusieurs reprises sur le site, je préfère utiliser des var pour pouvoir toutes les modifier en une seule fois si besoin. J'ouvre donc mon fichier root et y inscrit mes variables avec des noms simples à retenir */
+:root {
+    --jaune-sponso: #f8c454;
+
+    /* J'ai choisi de ne pas mettre #000 pour le noir et #fff pour le blanc, mais des nuances très légères pour apaiser un peu le regard de l'utilisateur sur l'écran, les noirs et blancs purs étant très fatiguants à l'œil */
+    --noir: rgb(9, 9, 9);
+    --blanc: rgb(243, 243, 243);
+    --eye-catch-blue: #070e45;
+    --to-top-rose: #ecb7b7;
+}
+
+
+/* J'utilise un template de ma propre conception pour chacun de mes sites web, et il y a des propriétés que je définis par défaut. Sur ce site en revanche, les margin et padding : 0; risquent de fausser les dimensions de mes container. */
+body, * {
+    box-sizing: border-box;
+    /*margin: 0;
+    padding: 0;*/
+
+    /* La police utilisée par Papier Tigre est la Graphik, je mets donc sur tous les éléments une font-family avec la weight Regular  */
+    font-family: 'graphik_regularregular';
+
+    /* En commentaire, j'ai mis la propriété permettant de transformer les scrolls de lien interne sur la page en défilement plutôt que déplacement instantané. Cela ajoute plus de fluidité au site, mais les instructions demandaient un scroll classique, donc j'ai redéfini la propriété automatique */
+    /* scroll-behavior: smooth; */
+    scroll-behavior: auto;
+}
+
+/* Comme indiqué dans le HTML, j'ai préféré créer directement une class avec la weight Bold de la police Graphik plutôt que de remettre la font-family dans chaque class de titre */
+.bold {
+    font-family: 'graphikbold';
+}
+
+.caps {
+    text-transform: uppercase;
+}
+
+.bold_caps {
+    font-family: 'graphikbold';
+    text-transform: uppercase;
+}
+
+/*--------------------------------------------------*/
+
+.sponso {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-flow: wrap;
+    background-color: var(--jaune-sponso);
+    border-bottom: var(--noir) 2px inset;
+    font-size: 0.7rem;
+}
+
+/* Pour afficher l'emoji de cadeau sur le bandeau de publicité, je l'intègre avec un pseudo-élément :after, car il sera plus simple de le repositionner en fonction de son parent. Je l'affiche en tant que background-image car Font-Awesome, Flaticon et Google Icons ne permettent pas d'avoir les emojis demandés sur le modèle */
+.sponso_title::after {
+    content: "";
+    background-image: url('..//img/gift.png');
+    display: inline-block;
+    width: 0.8rem;
+    height: 0.8rem;
+    background-size: 0.8rem 0.8rem;
+    vertical-align: middle;
+    margin: 0 2px;
+}
+
+/* Pour le SEO, j'ai mis un h1 dans le HTML, et je le fais disparaître avec un display: none; plutôt que la propriété visibility: hidden; pour éviter que le bloc ne prenne de la place sur la page */
+h1 {
+    display: none;
+}
+
+header {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    border-bottom: var(--noir) 1px solid;
+}
+
+
+.logo_link {
+    width: 10vw;
+    margin-left: 2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+nav {
+    display: flex;
+}
+
+.nav_link {
+    padding: 1.5rem 1rem;
+    font-size: 0.8rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-left: 1px solid var(--noir);
+    color: var(--noir);
+    text-decoration: none;
+    display: inline-block;
+}
+
+/* Le hover me demandera d'afficher un soulignement de texte. Je pourrais utiliser la facilité avec text-decoration mais un pseudo-élément me donnera bien plus de contrôle sur l'apparence du soulignement */
+.nav_link:after {
+    content: "";
+    width: 100%;
+    height: 1px;
+    /* Je pourrais cacher la barre avec visibility: hidden; mais pour m'assurer que rien ne bouge lors du hover, il est plus simple d'afficher la barre mais de la même couleur que le background */
+    background-color: var(--blanc);
+    display: block;
+}
+
+.nav_link:hover {
+    background-color: var(--noir);
+    color: var(--blanc);
+}
+
+/* Comme l'espace réservé à la langue du site dans la nav est composé de deux éléments, je dois remettre ma flexbox dedans pour repositionner correctement les liens de langues */
+.nav_language {
+    display: flex;
+    border: none;
+}
+
+/* Je veux la langue actuellement sélectionnée soit toujours soulignée, donc j'enlève le soulignement visible en continu et je change sa couleur */
+.nav_language .nav_link::after {
+    visibility: hidden;
+    background-color: var(--noir);
+}
+
+.nav_language .nav_link:hover {
+    background-color: var(--blanc);
+    color: var(--noir);
+}
+
+.nav_language .nav_link:hover::after {
+    visibility: visible;
+}
+
+/* Avec ma class current, la langue actuellement sélectionnée sera toujours soulignée. J'ai ajouté un !important pour m'assurer que la propriété soit prioritaire */
+.nav_language_current::after {
+    visibility: visible !important;
+}
+
+/* Les deux liens de langues ne sont pas également séparés entre eux et entre les bordures, donc j'utilise les pseudo-éléments d'enfants pour modifier individuellement les espacements des liens de cette class. Note : j'aurais pu utiliser first/last ou first-child/last-child, mais si d'autres langues sont ajoutées par la suite il sera plus simple d'ajouter un nth-child(3) */
+.nav_language .nav_link:nth-child(1) {
+    padding-right: 0.25rem;
+    padding-left: 0.5rem;
+}
+
+.nav_language .nav_link:nth-child(2) {
+    border: none;
+    padding-left: 0.25rem;
+    padding-right: 0.5rem;
+}
+
+.nav_icon {
+    padding: 1.5rem 1.5rem;
+}
+
+/* Les icones de la barre de nav ne doivent pas être soulignées en hover, donc j'enlève le contenu du :after pour directement supprimer tout le pseudo-élément de soulignement en une lign */
+.nav_icon::after {
+    content: none;
+}
+
+/* Par la suite, il y aura un tableau. Dans le cas où d'autres seront ajoutés plus tard, je préfère définir tout de suite les propriétés générales du table, ici le border-collapse: collapse; pour que les bordures entre les cellules s'affichent correctement */
+table {
+    border-collapse: collapse;
+}
+
+/* Je définis aussi la bordure entre toutes les cellulces par la même occasion */
+td {
+    border: 1px solid var(--noir);
+}
+
+/* Je veux que mon hero prenne la plupart de l'espace restant au-dessus de la ligne de flotaison, j'ai choisi 75vh en calculant approximativement la hauteur prise par le bandeau de sponsorisation et la nav. Je ne veux pas non plus complètement cacher la section suivante */
+.hero {
+    height: 75vh;
+    background-image: url('../img/header.jpeg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    display: flex;
+    flex-flow: column;
+    justify-content: flex-end;
+    align-items: flex-start;
+    padding: 2rem;
+}
+
+.hero_title {
+    color: var(--eye-catch-blue);
+    font-size: 2.5rem;
+    width: 200px;
+    margin: 0;
+}
+
+.hero_title span {
+    font-family: 'graphikbold';
+}
+
+.hero_cta {
+    background-color: var(--eye-catch-blue);
+    color: var(--blanc);
+    text-decoration: none;
+    font-size: 0.7rem;
+    font-family: 'graphikextralight';
+    padding: 1.5rem;
+    margin-top: 1rem;
+}
+
+.categories {
+    display: flex;
+    width: 100%;
+    height: 88.5vh;
+}
+
+.categories_article {
+    background-image: url('../img/cahier.jpeg');
+    background-position: center;
+    background-size: cover;
+    /* Pour que mes trois articles se partagent équitablement la largeur de l'écran, je mets une width totale qui va calculer un tiers précis de la largeur de tout l'écran d'affichage */
+    width: calc(100vw / 3);
+    display: flex;
+    flex-flow: column;
+    justify-content: space-between;
+    align-items: center;
+    text-align: center;
+}
+
+/* Les deux seules choses qui varient entre les article sont le texte et l'image de fond. Le texte est modifié dans le HTML, et ici grâce aux pseudo-éléments je n'ai pas besoin de recourir aux id ou aux class pour modifier rapidement les deux autres articles */
+.categories_article:nth-child(2) {
+    background-image: url('../img/gourdes.jpeg');
+}
+
+.categories_article:nth-child(3) {
+    background-image: url('../img/livre-couleurs.jpeg');
+}
+
+.categ_title {
+    margin: 4rem;
+    color: var(--eye-catch-blue);
+    font-family: 'graphikmedium';
+    font-size: 2rem;
+}
+
+.categ_cta {
+    background-color: var(--eye-catch-blue);
+    color: var(--blanc);
+    text-decoration: none;
+    font-size: 0.5rem;
+    font-family: 'graphikextralight';
+    padding: 1rem 1.5rem;
+    margin: 3rem;
+}
+
+.cadeau_web {
+    background-color: #012a48;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: auto;
+}
+
+.cadeau_web_title::before {
+    content: "";
+    background-image: url('..//img/gift.png');
+    display: inline-block;
+    width: 1rem;
+    height: 1rem;
+    background-size: 1rem 1rem;
+    vertical-align: middle;
+    margin: 0 2px;
+}
+
+.cadeau_web_text {
+    /* Plusieurs fois sur cette page, j'ai utilisé le modèle et aie calculé proportionnellement à son affichage le pourcentage de largeur ou de hauteur pris par les éléments pour savoir quel vw en width et vh en height je devais leur donner */
+    width: 30.5vw;
+    color: #fff;
+}
+
+.cadeau_web_chapo {
+    margin: 0;
+}
+
+.cadeau_web_paraph {
+    font-size: 0.6rem;
+    font-family: 'graphiklight';
+    margin-bottom: 1.5rem;
+}
+
+.cadeau_web_cta {
+    color: var(--eye-catch-blue);
+    background-color: #fff;
+    text-decoration: none;
+    font-size: 0.5rem;
+    font-family: 'graphikextralight';
+    padding: 1rem 1.5rem;
+}
+
+.link_list {
+    height: 55vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.link_title {
+    display: none;
+}
+
+.link_table {
+    width: 80vw;
+    height: 60%;
+    border-collapse: collapse;
+}
+
+.link_table td {
+    text-align: center;
+    width: auto;
+    height: fit-content;
+    border-collapse: collapse;
+    border: 1px solid var(--noir);
+}
+
+.table_link {
+    display: block;
+    color: var(--noir);
+    text-decoration: none;
+    font-family: 'graphikblack';
+    letter-spacing: 1px;
+    font-size: 1.2rem;
+    text-transform: uppercase;
+    width: auto;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.produits {
+    width: 100%;
+    background-color: #f0ecec;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.produits video {
+    height: 80vh;
+}
+
+.produits_text {
+    width: 30%;
+    margin-left: 2rem;
+}
+
+.produits_eye_catch {
+    font-size: 1.1rem;
+    margin: 0.5rem 0;
+}
+
+/* Dans la catégorie produits, chaque eye-catch a un emoji au-dessus pour l'agrémenter. Je réutilise les pseudo-éléments avec cette fois-ci before, étant donné que l'emoji est placé plus tôt que son élément-parent. Dans les faits ça ne change pas grand chose, mais c'est plus simple pour s'y retrouver */
+.produits_eye_catch::before {
+    content: "";
+    background-image: url('..//img/french_flag.png');
+    display: inline-block;
+    width: 1rem;
+    height: 1rem;
+    background-size: 1rem 1rem;
+    vertical-align: center;
+    margin: 0 2px;
+}
+
+.produits_eye_catch:nth-child(2)::before {
+    background-image: url('../img/recyclage.png');
+}
+
+.produits_eye_catch:nth-child(3)::before {
+    background-image: url('../img/livres_emoji.png');
+}
+
+.produits_paraph {
+    font-family: "graphik_regularregular";
+}
+
+.produits_cta {
+    background-color: var(--blanc);
+    color: var(--noir);
+    text-decoration: none;
+    font-size: 0.5rem;
+    font-family: 'graphiklight';
+    padding: 1rem 1.5rem;
+    border: 2px solid var(--noir);
+}
+
+.livraison {
+    width: 100%;
+    display: flex;
+    align-items: flex-start;
+    margin: 8rem 0 0 0;
+}
+
+.livraison_arti {
+    width: calc(100vw/3);
+    border: 1px solid var(--noir);
+    border-right: 0;
+    height: 20vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.livraison_arti:first-child {
+    border-left: 0;
+}
+
+.livraison_emote {
+    width: 2rem;
+    height: 2rem;
+    margin-bottom: 0.5rem;
+}
+
+.livraison_title, .livraison_paraph {
+    margin: 0.5rem 0 0 0;
+    text-align: center;
+}
+
+.livraison_title {
+    font-size: 0.9rem;
+}
+
+.livraison_paraph {
+    font-size: 0.8rem;
+}
+
+.newsletter {
+    margin-top: 0;
+    height: 60vh !important;
+    width: 100%;
+    background-image: url("../img/footer.jpeg");
+    background-attachment: fixed;
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: flex-start;
+    padding: 0 16rem;
+}
+
+.newsletter_flavor {
+    color: var(--blanc);
+    font-family: "graphikthin";
+    letter-spacing: 1px;
+}
+
+.newsletter form {
+    width: 70vw;
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px solid var(--blanc);
+    padding: 1rem 0;
+}
+
+.newsletter .mail {
+    width: 100%;
+    height: 2rem;
+    background: rgba(0, 0, 0, 00);
+    border: 0;
+    outline: 0;
+}
+
+.newsletter .mail::placeholder {
+    color: var(--blanc);
+    font-size: 2rem;
+    font-family: 'graphikextralight';
+}
+
+.newsletter button {
+    background: 0;
+    border: 0;
+    outline: 0;
+    color: var(--blanc);
+    font-size: .8rem;
+}
+
+.newsletter_infos_legales {
+    font-size: .8rem;
+    color: var(--blanc);
+}
+
+footer {
+    width: 100%;
+    height: 30vh;
+    display: flex;
+}
+
+.footer_logo {
+    width: 100px;
+}
+
+.footer_categ {
+    border: var(--noir) solid 1px;
+    border-bottom: 2px solid var(--noir);
+    flex: 1;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 0 3rem;
+}
+
+.footer_list {
+    list-style-type: none;
+    padding: 0;
+}
+
+.footer_link {
+    color: var(--noir);
+    text-decoration: none;
+    font-size: 0.6rem;
+    display: inline-block;
+}
+
+.footer_list li {
+    padding: 0rem;
+}
+
+.footer_categ:last-child {
+    justify-content: center;
+}
+
+.footer_link::after {
+    content: "";
+    width: 100%;
+    height: 1px;
+    background-color: var(--noir);
+    display: none;
+}
+
+.footer_link:hover::after {
+    display: block;
+}
+
+
+.adresse {
+    background-color: #e0e4ec;
+    height: 65vh;
+    width: 100%;
+    border-bottom: 10px solid var(--noir);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    color: var(--blanc);
+}
+
+.adresse_title {
+    font-family: "graphikthin";
+    letter-spacing: 1px;
+}
+
+.adresse_rue, .adresse_ville {
+    font-size: 4rem;
+    font-family: "graphiklight";
+    margin: 0;
+}
+
+.credits {
+    justify-self: flex-end;
+    position: absolute;
+    bottom: 0;
+    font-size: 0.5rem;
+}
+
+/* Le to-top fut un gros casse-tête pour le hover et déplacer les deux cases l'une sur l'autre. Au final, j'ai décidé d'avoir en élément-parent le bloc en arrière-plan */
+.to_top {
+    color: var(--to-top-rose);
+    text-decoration: none;
+    font-size: 2rem;
+    width: 70px;
+    height: 70px !important;
+    position: fixed;
+    right: 8vw;
+    bottom: 12vh;
+    width: 70px;
+    height: 70px;
+    background-color: var(--to-top-rose);
+    border: 1px solid #755b5b;
+}
+
+/* En after, l'élément directement au-dessus de l'élément-parent, à savoir le bloc blanc. J'y ajoute une transition compatible avec tous les navigateurs en prévision du hover */
+.to_top::after {
+    content: "";
+    background-color: var(--blanc);
+    border: var(--noir) 1px solid;
+    position: absolute;
+    display: inline-block;
+    width: 70px;
+    height: 70px;
+    left: -20px;
+    top: -20px;
+    -webkit-transition: all 0.2s ease-in;
+    -moz-transition: all 0.2s ease-in;
+    -o-transition: all 0.2s ease-in;
+    transition: all 0.2s ease-in;
+}
+
+/* Le before ne contient que la flèche devant tous les autres éléments du to-top, avec les mêmes propriétés de déplacement que le bloc sur lequel elle est placée */
+.to_top::before {
+    content: '↑';
+    font-size: 2rem;
+    color: var(--noir);
+    position: absolute;
+    z-index: 2;
+    height: 70px;
+    width: 70px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    left: -20px;
+    top: -20px;
+    -webkit-transition: all 0.2s ease-in;
+    -moz-transition: all 0.2s ease-in;
+    -o-transition: all 0.2s ease-in;
+    transition: all 0.2s ease-in;
+}
+
+/* En hover, je n'ai besoin que de modifier la position absolue des deux pseudo-éléments ainsi que d'ajouter une box-shadow pour coller au modèle donné */
+.to_top:hover::before, .to_top:hover::after {
+    left: -1px;
+    top: -1px;
+    box-shadow: rgba(0, 0, 0, 0.2) 0 0 10px;
+}
+
+/* Le media-query servira à détecter quand passer en mode responsive. J'aime bien le mettre à 1100px de max-width, c'est là que la plupart des ordinateurs s'arrêtent et que les tablettes commencent */
+@media all and (max-width: 1100px) {
+    .sponso_title, .sponso p {
+        font-size: 0.8rem;
+    }
+
+    header {
+        justify-content: center;
+        padding: 1rem;
+    }
+
+    .logo {
+        height: 2rem;
+    }
+
+    nav {
+        display: none;
+    }
+
+    .hero {
+        background-position: center;
+        justify-content: space-between;
+        align-items: center;
+        text-align: center;
+        height: 90vh;
+        background-image: url("../img/hero_mobile.jpg");
+    }
+
+    .hero_title {
+        width: 60%;
+        color: var(--blanc);
+    }
+
+    .hero_title span {
+        font-size: 6rem;
+        color: var(--blanc);
+    }
+
+    .hero_cta {
+        background-color: var(--blanc);
+        color: var(--eye-catch-blue);
+        font-family: 'graphikmedium';
+        font-size: 0.8rem;
+    }
+
+    .categories {
+        flex-direction: column;
+        height: fit-content;
+    }
+
+    .categories_article {
+        width: 100%;
+        height: 90vh;
+    }
+
+    .categ_title {
+        width: 50%;
+    }
+
+    .categ_cta {
+        font-size: 0.8rem;
+        padding: 2rem;
+        font-family: 'graphik_regularregular';
+    }
+
+    .cadeau_web {
+        flex-direction: column;
+    }
+
+    .cadeau_web_title {
+        font-size: 2rem;
+        margin-top: 1.5rem;
+        margin-bottom: 1rem;
+    }
+
+    .cadeau_web_title::before {
+        background-size: 2rem;
+        height: 2rem;
+        width: 2rem;
+        margin: 0;
+        padding: 0;
+    }
+
+    .cadeau_web_text {
+        width: 70vw;
+        margin-top: 0;
+        font-size: 1rem;
+    }
+
+    .cadeau_web_text span {
+        font-family: 'graphikbold';
+    }
+
+    .cadeau_web_paraph {
+        font-size: 0.8rem;
+        margin-bottom: 2rem;
+    }
+
+    .cadeau_web_cta {
+        font-size: 0.7rem;
+        padding: 1.5rem;
+        font-family: 'graphik_regularregular';
+    }
+
+    .cadeau_web_pic {
+        width: 80vw;
+        margin-top: 1.5rem;
+    }
+
+    .table_link {
+        font-size: 1rem;
+    }
+
+    .produits {
+        flex-direction: column;
+        padding-bottom: 2rem;
+    }
+
+    .produits video {
+        height: auto;
+        width: 100%;
+    }
+
+    .produits_text {
+        width: 100%;
+        padding: 2rem;
+        margin: 0;
+        height: auto;
+    }
+
+    .produits_paraph {
+        margin-bottom: 1.5rem;
+    }
+
+    .livraison {
+        flex-direction: column;
+        margin: 1rem auto;
+        width: 80vw;
+    }
+
+    .livraison_arti {
+        width: 100%;
+        border: 1px solid var(--noir) !important;
+        padding: 1rem;
+    }
+
+    .newsletter {
+        padding: 1rem;
+    }
+
+    .newsletter form {
+        width: 90%;
+    }
+
+    .newsletter .mail {
+        width: 100%;
+    }
+
+    .newsletter .mail::placeholder {
+        font-size: 1rem;
+    }
+
+    footer {
+        flex-direction: column;
+        height: auto;
+        justify-content: center;
+        align-items: center;
+        margin: 1rem auto;
+        width: 90vw;
+    }
+
+    .footer_categ {
+        padding: 1rem;
+        width: 100%;
+        border-top: 0;
+        display: flex;
+        justify-content: start;
+        align-self: center;
+    }
+
+    .footer_categ:first-child {
+        border-top: var(--noir) solid 1px;
+    }
+
+    .footer_link {
+        font-family: 'graphikmedium';
+    }
+
+    .footer_link:hover::after {
+        display: none;
+    }
+
+    .adresse {
+        background-color: #88ecc4;
+    }
+
+    .adresse_rue, .adresse_ville {
+        font-size: 1.5rem;
+    }
+
+    .to_top {
+        display: none;
+    }
+}
