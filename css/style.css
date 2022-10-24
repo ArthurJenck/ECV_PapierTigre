@@ -3,7 +3,7 @@ GLOBAL
 ---------------------------------------------------*/
 /* Auteur : Arthur Jenck
 Date : 17/10/22
-Version : 1.0
+Version : 1.1
 Site de l'auteur : http://ajenck.ecv-monsite.fr */
 
 @import url('https://fonts.googleapis.com/css2?family=Sora:wght@100;200;300;400;500;600;700;800&display=swap');
@@ -16,7 +16,7 @@ Site de l'auteur : http://ajenck.ecv-monsite.fr */
 
     /* J'ai choisi de ne pas mettre #000 pour le noir et #fff pour le blanc, mais des nuances très légères pour apaiser un peu le regard de l'utilisateur sur l'écran, les noirs et blancs purs étant très fatiguants à l'œil */
     --noir: rgb(9, 9, 9);
-    --blanc: rgb(243, 243, 243);
+    --blanc: rgb(250, 250, 250);
     --eye-catch-blue: #070e45;
     --to-top-rose: #ecb7b7;
 }
@@ -29,16 +29,21 @@ body, * {
     padding: 0;*/
 
     /* La police utilisée par Papier Tigre est la Graphik, je mets donc sur tous les éléments une font-family avec la weight Regular  */
-    font-family: 'graphik_regularregular';
+    font-family: 'graphik_regularregular', Arial, Helvetica, sans-serif;
+
+    /* Mettre une font-weight ne servira à rien vu que le poids de la police est défini dans la police elle-même telle qu'appelée dans le font-family. En revanche, si la page fait appel aux polices de secours, définir la weight de la font devient nécessaire */
+    font-weight: 400;
 
     /* En commentaire, j'ai mis la propriété permettant de transformer les scrolls de lien interne sur la page en défilement plutôt que déplacement instantané. Cela ajoute plus de fluidité au site, mais les instructions demandaient un scroll classique, donc j'ai redéfini la propriété automatique */
+
     /* scroll-behavior: smooth; */
     scroll-behavior: auto;
 }
 
 /* Comme indiqué dans le HTML, j'ai préféré créer directement une class avec la weight Bold de la police Graphik plutôt que de remettre la font-family dans chaque class de titre */
 .bold {
-    font-family: 'graphikbold';
+    font-family: 'graphikbold', Arial, Helvetica, sans-serif;
+    font-weight: 700;
 }
 
 .caps {
@@ -46,7 +51,8 @@ body, * {
 }
 
 .bold_caps {
-    font-family: 'graphikbold';
+    font-family: 'graphikbold', Arial, Helvetica, sans-serif;
+    font-weight: 700;
     text-transform: uppercase;
 }
 
@@ -74,18 +80,17 @@ body, * {
     margin: 0 2px;
 }
 
-/* Pour le SEO, j'ai mis un h1 dans le HTML, et je le fais disparaître avec un display: none; plutôt que la propriété visibility: hidden; pour éviter que le bloc ne prenne de la place sur la page */
-h1 {
-    display: none;
-}
-
-header {
+header, .header_mobile {
     width: 100%;
     display: flex;
     justify-content: space-between;
     border-bottom: var(--noir) 1px solid;
+    background-color: var(--blanc);
 }
 
+.header_mobile {
+    display: none;
+}
 
 .logo_link {
     width: 10vw;
@@ -95,8 +100,12 @@ header {
     align-items: center;
 }
 
-nav {
+.nav_list {
     display: flex;
+    background-color: var(--blanc);
+    /* Je me sers de la propriété list-style pour faire disparaître les pointeurs des éléments de la liste */
+    list-style: none;
+    margin: 0;
 }
 
 .nav_link {
@@ -130,6 +139,8 @@ nav {
 .nav_language {
     display: flex;
     border: none;
+    /* Normalement je réutiliserais ici un simple list-style, mais pour frimer et montrer que je connais la version complète de la commande je mets list-style-type */
+    list-style-type: none;
 }
 
 /* Je veux la langue actuellement sélectionnée soit toujours soulignée, donc j'enlève le soulignement visible en continu et je change sa couleur */
@@ -153,12 +164,12 @@ nav {
 }
 
 /* Les deux liens de langues ne sont pas également séparés entre eux et entre les bordures, donc j'utilise les pseudo-éléments d'enfants pour modifier individuellement les espacements des liens de cette class. Note : j'aurais pu utiliser first/last ou first-child/last-child, mais si d'autres langues sont ajoutées par la suite il sera plus simple d'ajouter un nth-child(3) */
-.nav_language .nav_link:nth-child(1) {
+.nav_language li:nth-child(1) .nav_link {
     padding-right: 0.25rem;
     padding-left: 0.5rem;
 }
 
-.nav_language .nav_link:nth-child(2) {
+.nav_language li:nth-child(2) .nav_link {
     border: none;
     padding-left: 0.25rem;
     padding-right: 0.5rem;
@@ -204,15 +215,17 @@ td {
 }
 
 .hero_title span {
-    font-family: 'graphikbold';
+    font-family: 'graphikbold', Arial, Helvetica, sans-serif;
+    font-weight: 700;
 }
 
 .hero_cta {
     background-color: var(--eye-catch-blue);
     color: var(--blanc);
     text-decoration: none;
-    font-size: 0.7rem;
-    font-family: 'graphikextralight';
+    font-size: 0.8rem;
+    font-family: 'graphiklight', Arial, Helvetica, sans-serif;
+    font-weight: 300;
     padding: 1.5rem;
     margin-top: 1rem;
 }
@@ -248,7 +261,8 @@ td {
 .categ_title {
     margin: 4rem;
     color: var(--eye-catch-blue);
-    font-family: 'graphikmedium';
+    font-family: 'graphikmedium', Arial, Helvetica, sans-serif;
+    font-weight: 500;
     font-size: 2rem;
 }
 
@@ -256,8 +270,9 @@ td {
     background-color: var(--eye-catch-blue);
     color: var(--blanc);
     text-decoration: none;
-    font-size: 0.5rem;
-    font-family: 'graphikextralight';
+    font-size: 0.7rem;
+    font-family: 'graphiklight', Arial, Helvetica, sans-serif;
+    font-weight: 300;
     padding: 1rem 1.5rem;
     margin: 3rem;
 }
@@ -293,7 +308,8 @@ td {
 
 .cadeau_web_paraph {
     font-size: 0.6rem;
-    font-family: 'graphiklight';
+    font-family: 'graphiklight', Arial, Helvetica, sans-serif;
+    font-weight: 300;
     margin-bottom: 1.5rem;
 }
 
@@ -301,8 +317,9 @@ td {
     color: var(--eye-catch-blue);
     background-color: #fff;
     text-decoration: none;
-    font-size: 0.5rem;
-    font-family: 'graphikextralight';
+    font-size: 0.7rem;
+    font-family: 'graphiklight', Arial, Helvetica, sans-serif;
+    font-weight: 300;
     padding: 1rem 1.5rem;
 }
 
@@ -311,10 +328,6 @@ td {
     display: flex;
     justify-content: center;
     align-items: center;
-}
-
-.link_title {
-    display: none;
 }
 
 .link_table {
@@ -335,7 +348,8 @@ td {
     display: block;
     color: var(--noir);
     text-decoration: none;
-    font-family: 'graphikblack';
+    font-family: 'graphikblack', Arial, Helvetica, sans-serif;
+    font-weight: 900;
     letter-spacing: 1px;
     font-size: 1.2rem;
     text-transform: uppercase;
@@ -389,15 +403,17 @@ td {
 }
 
 .produits_paraph {
-    font-family: "graphik_regularregular";
+    font-family: "graphik_regularregular", Arial, Helvetica, sans-serif;
+    font-weight: 400;
 }
 
 .produits_cta {
     background-color: var(--blanc);
     color: var(--noir);
     text-decoration: none;
-    font-size: 0.5rem;
-    font-family: 'graphiklight';
+    font-size: 0.7rem;
+    font-family: 'graphik_regularregular', Arial, Helvetica, sans-serif;
+    font-weight: 400;
     padding: 1rem 1.5rem;
     border: 2px solid var(--noir);
 }
@@ -459,7 +475,8 @@ td {
 
 .newsletter_flavor {
     color: var(--blanc);
-    font-family: "graphikthin";
+    font-family: "graphikthin", Arial, Helvetica, sans-serif;
+    font-weight: 100;
     letter-spacing: 1px;
 }
 
@@ -471,21 +488,34 @@ td {
     padding: 1rem 0;
 }
 
+/* J'ai modifié les propriétés pour que le texte tapé par l'utilisateur ressemble au placeholder, mais plus gras */
 .newsletter .mail {
     width: 100%;
     height: 2rem;
     background: rgba(0, 0, 0, 00);
     border: 0;
     outline: 0;
+    color: var(--blanc);
+    font-size: 2rem;
 }
 
 .newsletter .mail::placeholder {
     color: var(--blanc);
     font-size: 2rem;
-    font-family: 'graphikextralight';
+    font-family: 'graphikextralight', Arial, Helvetica, sans-serif;
+    font-weight: 200;
+    -webkit-transition: all 0.2s ease-in;
+    -moz-transition: all 0.2s ease-in;
+    -o-transition: all 0.2s ease-in;
+    transition: all 0.2s ease-in;
 }
 
-.newsletter button {
+/* Maintenant, le placeholder disparaît en cliquant sur l'input */
+.newsletter .mail:focus::placeholder {
+    color: transparent;
+}
+
+.newsletter input[type=submit] {
     background: 0;
     border: 0;
     outline: 0;
@@ -551,7 +581,7 @@ footer {
 }
 
 
-.adresse {
+address {
     background-color: #e0e4ec;
     height: 65vh;
     width: 100%;
@@ -565,13 +595,15 @@ footer {
 }
 
 .adresse_title {
-    font-family: "graphikthin";
+    font-family: "graphikthin", Arial, Helvetica, sans-serif;
+    font-weight: 100;
     letter-spacing: 1px;
 }
 
 .adresse_rue, .adresse_ville {
     font-size: 4rem;
-    font-family: "graphiklight";
+    font-family: "graphiklight", Arial, Helvetica, sans-serif;
+    font-weight: 300;
     margin: 0;
 }
 
@@ -644,21 +676,85 @@ footer {
 
 /* Le media-query servira à détecter quand passer en mode responsive. J'aime bien le mettre à 1100px de max-width, c'est là que la plupart des ordinateurs s'arrêtent et que les tablettes commencent */
 @media all and (max-width: 1100px) {
+
+    /* Cette partie servait à essayer de règler le problème d'espace blanc sur l'iPhone SE, sans succès. J'ai décidé malgré tout de la laisser car elle ne peut-être que bénéfique */
+    html, body {
+        width: 100%;
+        height: 100%;
+        margin: 0px;
+        padding: 0px;
+        overflow-x: hidden;
+    }
+
+    .sponso_title {
+        margin-bottom: 0;
+    }
+
     .sponso_title, .sponso p {
         font-size: 0.8rem;
+        text-align: center;
+    }
+
+    .sponso p::first-letter {
+        text-transform: capitalize;
     }
 
     header {
         justify-content: center;
         padding: 1rem;
+        display: none;
     }
 
     .logo {
         height: 2rem;
     }
 
-    nav {
-        display: none;
+    .nav_mobile, .header_mobile {
+        height: fit-content !important;
+    }
+
+    .header_mobile {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .header_mob_logo {
+        width: 3rem;
+        height: 3rem;
+        margin: auto 0 auto 1rem;
+    }
+
+    .nav_icon {
+        padding: 0;
+        margin: 0 auto;
+    }
+
+    .nav_mobile {
+        display: flex;
+        justify-content: space-between;
+        list-style: none;
+        margin: 0;
+        padding: 0;
+    }
+
+    .nav_mobile .nav_icon {
+        font-size: 1rem;
+        padding: 1rem;
+        position: relative;
+    }
+
+    .sandwich_link::before, .sandwich_link::after {
+        content: "";
+        width: 50%;
+        height: 1px;
+        background-color: var(--noir);
+        display: block;
+    }
+
+    /* Pour une raison que je n'arrive pas à expliquer, le after fait 2px de height malgré les instructions données pour le dimensionner à un px de hauteur, j'ai l'impression que c'est un bug visuel */
+    .sandwich_link::after {
+        position: relative;
+        left: 50%;
     }
 
     .hero {
@@ -671,19 +767,21 @@ footer {
     }
 
     .hero_title {
-        width: 60%;
+        width: 70vw;
         color: var(--blanc);
     }
 
     .hero_title span {
         font-size: 6rem;
         color: var(--blanc);
+        text-align: center;
     }
 
     .hero_cta {
         background-color: var(--blanc);
         color: var(--eye-catch-blue);
-        font-family: 'graphikmedium';
+        font-family: 'graphikmedium', Arial, Helvetica, sans-serif;
+        font-weight: 500;
         font-size: 0.8rem;
     }
 
@@ -704,7 +802,8 @@ footer {
     .categ_cta {
         font-size: 0.8rem;
         padding: 2rem;
-        font-family: 'graphik_regularregular';
+        font-family: 'graphik_regularregular', Arial, Helvetica, sans-serif;
+        font-weight: 400;
     }
 
     .cadeau_web {
@@ -732,7 +831,12 @@ footer {
     }
 
     .cadeau_web_text span {
-        font-family: 'graphikbold';
+        font-family: 'graphikbold', Arial, Helvetica, sans-serif;
+        font-weight: 700;
+    }
+
+    .cadeau_web_chapo span {
+        display: block;
     }
 
     .cadeau_web_paraph {
@@ -743,7 +847,8 @@ footer {
     .cadeau_web_cta {
         font-size: 0.7rem;
         padding: 1.5rem;
-        font-family: 'graphik_regularregular';
+        font-family: 'graphik_regularregular', Arial, Helvetica, sans-serif;
+        font-weight: 400;
     }
 
     .cadeau_web_pic {
@@ -752,7 +857,7 @@ footer {
     }
 
     .table_link {
-        font-size: 1rem;
+        font-size: 0.8rem;
     }
 
     .produits {
@@ -827,7 +932,8 @@ footer {
     }
 
     .footer_link {
-        font-family: 'graphikmedium';
+        font-family: 'graphikmedium', Arial, Helvetica, sans-serif;
+        font-weight: 500;
     }
 
     .footer_link:hover::after {
@@ -845,4 +951,25 @@ footer {
     .to_top {
         display: none;
     }
+}
+
+/* J'ai essayé beaucoup de fix possibles pour ce problème d'espace blanc sur l'iPhone SE, sans succès, pour le coup j'aimerais beaucoup avoir votre aide là-dessus */
+
+@media only screen and (-webkit-min-device-pixel-ratio: 1.5),
+only screen and (-o-min-device-pixel-ratio: 3/2),
+only screen and (min--moz-device-pixel-ratio: 1.5),
+only screen and (min-device-pixel-ratio: 1.5) {
+
+    html,
+    body {
+        width: 100vw !important;
+        width: 100% !important;
+        overflow-x: hidden !important;
+        box-sizing: border-box !important;
+    }
+
+    body * {
+        box-sizing: border-box !important;
+    }
+
 }

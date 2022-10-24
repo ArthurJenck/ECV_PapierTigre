@@ -69,8 +69,6 @@
 
     <!-- Plutôt que de réutiliser une balise <section>, je me sers de <header> qui a été créée pour ce cas. Pour le référencement, le W3C sera content de voir que mon site a bien un header -->
     <header>
-      <!-- Encore pour le référencement et le W3C, je mets un <h1> dans mon site. Cependant, le design model ne contient pas de <h1>, le titre du site est compris dans l'image du logo. Je ferai donc disparaître mon <h1> dans mon CSS -->
-      <h1>Papier Tigre</h1>
       <!-- Il est de bonne pratique que le logo serve également de lien vers la page d'accueil. Je mets donc un lien vers mon index.html sur mon logo -->
       <a href="index.html" class="logo_link">
         <!-- Un logo n'a pas besoin d'attribut alt ni de title. En revanche, je lui mets une classe pour y accéder plus rapidement dans le CSS -->
@@ -78,35 +76,86 @@
       </a>
       <!-- Pour ma barre de navigation, je pourrais utiliser une <ul>, mais ce serait rallonger mon code inutilement. Il est plus efficace d'utiliser la balise prévue à cet effet <nav> puis d'écrire une liste de liens que je mettrai en forme dans le CSS -->
       <nav>
-        <a href="#" class="nav_link">Nouveautés</a>
-        <a href="#" class="nav_link">Carnets</a>
-        <a href="#" class="nav_link">Agendas & Calendriers</a>
-        <a href="#" class="nav_link">Écriture & Accessoires</a>
-        <a href="#" class="nav_link">À propos</a>
-        <a href="#" class="nav_link">Entreprises</a>
-        <!-- Parmi les liens de la barre de nav, il y en a un particulier. Il ne s'agit pas d'un lien vers une autre page mais d'un sélecteur de langues. Je vais donc créer une <div> pour modifier les liens de choix de langue et ne pas gêner ma flexbox -->
-        <div class="nav_language">
-          <!-- Je crée une classe current qui plus tard pourra être déplacée par javascript sur le lien de la langue sélectionnée et ainsi donner un rappel visuel de la langue actuellement utilisée par le site -->
-          <a href="#" class="nav_link nav_language_current">FR</a>
-          <a href="#" class="nav_link">EN</a>
-        </div>
-        <!-- Les prochains liens de la nav sont des icônes, j'ai ici utilisé FontAwesome -->
-        <a href="#" class="nav_link nav_icon"
-          ><i class="fa-solid fa-magnifying-glass"></i
-        ></a>
-        <a href="#" class="nav_link nav_icon"
-          ><i class="fa-regular fa-user"></i
-        ></a>
-        <a href="#" class="nav_link nav_icon"
-          ><i class="fa-solid fa-bag-shopping"></i
-        ></a>
+        <ul class="nav_list">
+          <li>
+            <a href="#" class="nav_link">Nouveautés</a>
+          </li>
+          <li>
+            <a href="#" class="nav_link">Carnets</a>
+          </li>
+          <li>
+            <a href="#" class="nav_link">Agendas & Calendriers</a>
+          </li>
+          <li>
+            <a href="#" class="nav_link">Écriture & Accessoires</a>
+          </li>
+          <li>
+            <a href="#" class="nav_link">À propos</a>
+          </li>
+          <li>
+            <a href="#" class="nav_link">Entreprises</a>
+          </li>
+          <!-- Parmi les liens de la barre de nav, il y en a un particulier. Il ne s'agit pas d'un lien vers une autre page mais d'un sélecteur de langues. Je vais donc créer une <div> pour modifier les liens de choix de langue et ne pas gêner ma flexbox -->
+          <li>
+            <ul class="nav_language">
+              <!-- Je crée une classe current qui plus tard pourra être déplacée par javascript sur le lien de la langue sélectionnée et ainsi donner un rappel visuel de la langue actuellement utilisée par le site -->
+              <li>
+                <a href="#" class="nav_link nav_language_current">FR</a>
+              </li>
+              <li>
+                <a href="#" class="nav_link">EN</a>
+              </li>
+            </ul>
+          </li>
+          <!-- Les prochains liens de la nav sont des icônes, j'ai ici utilisé FontAwesome -->
+          <li>
+            <a href="#" class="nav_link nav_icon"
+              ><i class="fa-solid fa-magnifying-glass"></i
+            ></a>
+          </li>
+          <li>
+            <a href="#" class="nav_link nav_icon"
+              ><i class="fa-regular fa-user"></i
+            ></a>
+          </li>
+          <li>
+            <a href="#" class="nav_link nav_icon"
+              ><i class="fa-solid fa-bag-shopping"></i
+            ></a>
+          </li>
+        </ul>
       </nav>
     </header>
 
+    <section class="header_mobile">
+      <!-- Le client ne m'avait pas fourni toutes les assets visuelles donc je suis allé dans Illustrator et j'ai rogné l'un des fichiers SVG pour avoir le logo du modèle pour la version responsive -->
+      <img src="./img/logo_nav_mobile.svg" alt="" class="header_mob_logo" />
+      <ul class="nav_mobile">
+        <li>
+          <a href="#" class="nav_link nav_icon"
+            ><i class="fa-solid fa-magnifying-glass"></i
+          ></a>
+        </li>
+        <li>
+          <a href="#" class="nav_link nav_icon"
+            ><i class="fa-regular fa-user"></i
+          ></a>
+        </li>
+        <li>
+          <a href="#" class="nav_link nav_icon"
+            ><i class="fa-solid fa-bag-shopping"></i
+          ></a>
+        </li>
+        <li>
+          <a href="#" class="nav_link nav_icon sandwich_link">—</a>
+        </li>
+      </ul>
+    </section>
+
     <!-- Il n'y a pas de balise hero, donc j'utilise une section. Je n'inclus par l'image de fond dans le HTML car elle ne sera inclue dans le site que grâce au CSS dans un background-image -->
     <section class="hero">
-      <!-- Le titre du hero est le plus important après le <h1>, car c'est celui qui va le plus attirer le regard au-dessus de la ligne de flotaison. C'est pourquoi j'utilise une balise <h2> -->
-      <h2 class="hero_title bold_caps">Les agendas <span>2023</span></h2>
+      <!-- Suivant les conseils de ma prof préférée, Les agendas 2023 est maintenant mon h1 -->
+      <h1 class="hero_title bold_caps">Les agendas <span>2023</span></h1>
       <!-- Pour le call-to-action de mon hero, et même du reste de mon site, je préfère utiliser des balises <a> plutôt que des <btn>, car il est bien plus facile et rapide de styliser un lien en button que de transformer un button en lien. -->
       <a href="#" class="hero_cta caps">Voir la sélection</a>
     </section>
@@ -153,10 +202,8 @@
       />
     </section>
 
-    <!-- La prochaine section est composée exclusivement d'un tableau, mais pour décomposer la page au mieux et plus facilement fixer la taille de la-dite section, j'enveloppe la balise <table> d'une <section> -->
-    <section class="link_list">
-      <!-- Chaque section doit avoir un titre, j'en ajoute donc un auquel je mets une class et que je ferai disparaître dans le CSS -->
-      <h3 class="link_title">Tableau</h3>
+    <!-- La prochaine section est composée exclusivement d'un tableau, mais pour décomposer la page au mieux et plus facilement fixer la taille de la-dite section, j'enveloppe la balise <table> d'une <section>. J'ai maintenant rajouté un attribut aria-label pour la meilleure compréhension possible de la section sans le h3 en display: none; -->
+    <section class="link_list" aria-label="Tableau de liens">
       <table class="link_table">
         <!-- Chaque ligne du tableau est définie par une balise <tr> pour Table Row -->
         <tr>
@@ -224,12 +271,18 @@
       <h3 class="newsletter_flavor">Keep in touch</h3>
       <!-- La partie principale de la section newsletter a une zone de texte permettant d'envoyer son adresse-mail, je vais alors créer une div dans laquelle se trouvera un formulaire -->
       <div class="newsletter_content">
-        <!-- Bien que ça pose problème au W3C, je rajoute des attributs action et method car ils sont plus tard nécessaires dans le référencement. Je remplirai les cases manquantes lorsque je connaîtrai le type d'action et de method utilisés, ce qui règlera les seules erreurs W3C de mon code HTML -->
-        <form class="mail_form" action="" method="">
+        <!-- J'ai enlevé l'attribut action, non nécessaire au W3C et ai pour le moment mis une valeur get sur la method. Tout sera remplacé quand le client me dira les valeurs qu'il désire et les liens vers la base mySQL -->
+        <form class="mail_form" method="get">
           <!-- Pour permettre aux utilisateurs d'écrire, je mets un input.  -->
-          <input type="text" class="mail" placeholder="Votre adresse-mail" />
-          <!-- J'ajoute un bouton pour soumettre le formulaire de l'adresse-mail. Je sais que pour que le bouton fonctionne, j'aurais dû en faire un input que je place dans un <fieldset> entre les balises <form> -->
-          <button type="submit">Envoyer</button>
+          <input
+            type="email"
+            class="mail"
+            placeholder="Votre adresse-mail"
+            pattern="*@*.com|fr"
+            required
+          />
+          <!-- J'ajoute un bouton pour soumettre le formulaire de l'adresse-mail.  -->
+          <input type="submit" />
         </form>
         <p class="newsletter_infos_legales">
           Vous pouvez vous désinscrire à tout moment. Vous trouverez pour cela
@@ -277,12 +330,12 @@
       </div>
     </footer>
 
-    <section class="adresse">
+    <address>
       <h6 class="adresse_title caps">Boutique de Paris</h6>
       <p class="adresse_rue">5 Rue des Filles du Calvaire</p>
       <p class="adresse_ville">75003 Paris - France</p>
       <p class="credits caps">2022 - Made by Arthur Jenck for Papier Tigre</p>
-    </section>
+    </address>
 
     <!-- J'ai décidé d'intégrer ma div de to-top à la fin de mon code, parce que pourquoi pas -->
     <div class="to_top_container">
