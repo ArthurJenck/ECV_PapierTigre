@@ -1,24 +1,29 @@
-# Intégration Papier Tigre
+# ECV Paris - Papier Tigre
 
-Un de mes projets en 2e année de Bachelor Chef de Projet Digital à l'ECV Digital.
+## Intégrer une Landing Page à partir d'un fichier PDF
 
-## Installation / Utilisation
+Rendu d'un projet de mon année passée en 2e année en Bachelor Chef de Projet Digital à l'ECV Paris.
 
-Récupérez simplement les fichiers depuis le repository, puis visualisez-les à l'aide d'un IDE adapté au Web.
+### Aperçu hébergé
 
-## Aperçu hébergé
+Hébergement sur GitHub Pages :  
+https://arthurjenck.github.io/ECV_PapierTigre/
 
-Hébergement gratuit sur GitHub Pages : https://arthurjenck.github.io/ECV_PapierTigre/
+### Dates du projet
 
-## Auteur et Remerciements
+Projet terminé le 24 octobre 2022.
 
-##### Arthur Jenck, alias moi, auteur de ce code. https://arthurjenck.com/
+### Remerciements
 
 Alexandre Morin, confrère développeur web qui m'a apporté beaucoup de connaissances.  
 @Satvikpopli sur CodePen, qui m'a appris à créer un bon menu burger uniquement à l'aide de HTML et de CSS.  
 Éric Caron, premier professeur de développement web, qui m'a appris les bases et m'a transmis sa passion.  
 Manon Valdonio, actuelle professeure de développement web, et ses formidables conseils sur mon avenir et mes connaissances du moment.
 
-## Statut du projet
+### Auteur
 
-Terminé
+Arthur Jenck  
+https://arthurjenck.com/  
+https://www.linkedin.com/in/arthurjenck/
+
+<img src="https://i.ibb.co/grKRmmn/Logo-Jaune-PNG.png" width="75">
