@@ -6,7 +6,7 @@ Date : 17/10/22
 Version : 1.1
 Site de l'auteur : http://ajenck.ecv-monsite.fr */
 
-@import url('https://fonts.googleapis.com/css2?family=Sora:wght@100;200;300;400;500;600;700;800&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Sora:wght@100;200;300;400;500;600;700;800&display=swap");
 /* font-family: 'Sora', sans-serif; */
 /* Ma petite police favorie est la Sora, je l'intègre par défaut dans tous mes sites */
 
@@ -21,15 +21,15 @@ Site de l'auteur : http://ajenck.ecv-monsite.fr */
     --to-top-rose: #ecb7b7;
 }
 
-
 /* J'utilise un template de ma propre conception pour chacun de mes sites web, et il y a des propriétés que je définis par défaut. Sur ce site en revanche, les margin et padding : 0; risquent de fausser les dimensions de mes container. */
-body, * {
+body,
+* {
     box-sizing: border-box;
     /*margin: 0;
     padding: 0;*/
 
     /* La police utilisée par Papier Tigre est la Graphik, je mets donc sur tous les éléments une font-family avec la weight Regular  */
-    font-family: 'graphik_regularregular', Arial, Helvetica, sans-serif;
+    font-family: "graphik_regularregular", Arial, Helvetica, sans-serif;
 
     /* Mettre une font-weight ne servira à rien vu que le poids de la police est défini dans la police elle-même telle qu'appelée dans le font-family. En revanche, si la page fait appel aux polices de secours, définir la weight de la font devient nécessaire */
     font-weight: 400;
@@ -42,7 +42,7 @@ body, * {
 
 /* Comme indiqué dans le HTML, j'ai préféré créer directement une class avec la weight Bold de la police Graphik plutôt que de remettre la font-family dans chaque class de titre */
 .bold {
-    font-family: 'graphikbold', Arial, Helvetica, sans-serif;
+    font-family: "graphikbold", Arial, Helvetica, sans-serif;
     font-weight: 700;
 }
 
@@ -51,7 +51,7 @@ body, * {
 }
 
 .bold_caps {
-    font-family: 'graphikbold', Arial, Helvetica, sans-serif;
+    font-family: "graphikbold", Arial, Helvetica, sans-serif;
     font-weight: 700;
     text-transform: uppercase;
 }
@@ -71,7 +71,7 @@ body, * {
 /* Pour afficher l'emoji de cadeau sur le bandeau de publicité, je l'intègre avec un pseudo-élément :after, car il sera plus simple de le repositionner en fonction de son parent. Je l'affiche en tant que background-image car Font-Awesome, Flaticon et Google Icons ne permettent pas d'avoir les emojis demandés sur le modèle */
 .sponso_title::after {
     content: "";
-    background-image: url('..//img/gift.png');
+    background-image: url("..//img/gift.png");
     display: inline-block;
     width: 0.8rem;
     height: 0.8rem;
@@ -80,7 +80,8 @@ body, * {
     margin: 0 2px;
 }
 
-header, .header_mobile {
+header,
+.header_mobile {
     width: 100%;
     display: flex;
     justify-content: space-between;
@@ -197,7 +198,7 @@ td {
 /* Je veux que mon hero prenne la plupart de l'espace restant au-dessus de la ligne de flotaison, j'ai choisi 75vh en calculant approximativement la hauteur prise par le bandeau de sponsorisation et la nav. Je ne veux pas non plus complètement cacher la section suivante */
 .hero {
     height: 75vh;
-    background-image: url('../img/header.jpeg');
+    background-image: url("../img/header.jpeg");
     background-size: cover;
     background-repeat: no-repeat;
     display: flex;
@@ -215,7 +216,7 @@ td {
 }
 
 .hero_title span {
-    font-family: 'graphikbold', Arial, Helvetica, sans-serif;
+    font-family: "graphikbold", Arial, Helvetica, sans-serif;
     font-weight: 700;
 }
 
@@ -224,7 +225,7 @@ td {
     color: var(--blanc);
     text-decoration: none;
     font-size: 0.8rem;
-    font-family: 'graphiklight', Arial, Helvetica, sans-serif;
+    font-family: "graphiklight", Arial, Helvetica, sans-serif;
     font-weight: 300;
     padding: 1.5rem;
     margin-top: 1rem;
@@ -237,7 +238,7 @@ td {
 }
 
 .categories_article {
-    background-image: url('../img/cahier.jpeg');
+    background-image: url("../img/cahier.jpeg");
     background-position: center;
     background-size: cover;
     /* Pour que mes trois articles se partagent équitablement la largeur de l'écran, je mets une width totale qui va calculer un tiers précis de la largeur de tout l'écran d'affichage */
@@ -251,17 +252,17 @@ td {
 
 /* Les deux seules choses qui varient entre les article sont le texte et l'image de fond. Le texte est modifié dans le HTML, et ici grâce aux pseudo-éléments je n'ai pas besoin de recourir aux id ou aux class pour modifier rapidement les deux autres articles */
 .categories_article:nth-child(2) {
-    background-image: url('../img/gourdes.jpeg');
+    background-image: url("../img/gourdes.jpeg");
 }
 
 .categories_article:nth-child(3) {
-    background-image: url('../img/livre-couleurs.jpeg');
+    background-image: url("../img/livre-couleurs.jpeg");
 }
 
 .categ_title {
     margin: 4rem;
     color: var(--eye-catch-blue);
-    font-family: 'graphikmedium', Arial, Helvetica, sans-serif;
+    font-family: "graphikmedium", Arial, Helvetica, sans-serif;
     font-weight: 500;
     font-size: 2rem;
 }
@@ -271,7 +272,7 @@ td {
     color: var(--blanc);
     text-decoration: none;
     font-size: 0.7rem;
-    font-family: 'graphiklight', Arial, Helvetica, sans-serif;
+    font-family: "graphiklight", Arial, Helvetica, sans-serif;
     font-weight: 300;
     padding: 1rem 1.5rem;
     margin: 3rem;
@@ -287,7 +288,7 @@ td {
 
 .cadeau_web_title::before {
     content: "";
-    background-image: url('..//img/gift.png');
+    background-image: url("..//img/gift.png");
     display: inline-block;
     width: 1rem;
     height: 1rem;
@@ -308,7 +309,7 @@ td {
 
 .cadeau_web_paraph {
     font-size: 0.6rem;
-    font-family: 'graphiklight', Arial, Helvetica, sans-serif;
+    font-family: "graphiklight", Arial, Helvetica, sans-serif;
     font-weight: 300;
     margin-bottom: 1.5rem;
 }
@@ -318,7 +319,7 @@ td {
     background-color: #fff;
     text-decoration: none;
     font-size: 0.7rem;
-    font-family: 'graphiklight', Arial, Helvetica, sans-serif;
+    font-family: "graphiklight", Arial, Helvetica, sans-serif;
     font-weight: 300;
     padding: 1rem 1.5rem;
 }
@@ -348,7 +349,7 @@ td {
     display: block;
     color: var(--noir);
     text-decoration: none;
-    font-family: 'graphikblack', Arial, Helvetica, sans-serif;
+    font-family: "graphikblack", Arial, Helvetica, sans-serif;
     font-weight: 900;
     letter-spacing: 1px;
     font-size: 1.2rem;
@@ -385,7 +386,7 @@ td {
 /* Dans la catégorie produits, chaque eye-catch a un emoji au-dessus pour l'agrémenter. Je réutilise les pseudo-éléments avec cette fois-ci before, étant donné que l'emoji est placé plus tôt que son élément-parent. Dans les faits ça ne change pas grand chose, mais c'est plus simple pour s'y retrouver */
 .produits_eye_catch::before {
     content: "";
-    background-image: url('..//img/french_flag.png');
+    background-image: url("..//img/french_flag.png");
     display: inline-block;
     width: 1rem;
     height: 1rem;
@@ -395,11 +396,11 @@ td {
 }
 
 .produits_eye_catch:nth-child(2)::before {
-    background-image: url('../img/recyclage.png');
+    background-image: url("../img/recyclage.png");
 }
 
 .produits_eye_catch:nth-child(3)::before {
-    background-image: url('../img/livres_emoji.png');
+    background-image: url("../img/livres_emoji.png");
 }
 
 .produits_paraph {
@@ -412,7 +413,7 @@ td {
     color: var(--noir);
     text-decoration: none;
     font-size: 0.7rem;
-    font-family: 'graphik_regularregular', Arial, Helvetica, sans-serif;
+    font-family: "graphik_regularregular", Arial, Helvetica, sans-serif;
     font-weight: 400;
     padding: 1rem 1.5rem;
     border: 2px solid var(--noir);
@@ -426,7 +427,7 @@ td {
 }
 
 .livraison_arti {
-    width: calc(100vw/3);
+    width: calc(100vw / 3);
     border: 1px solid var(--noir);
     border-right: 0;
     height: 20vh;
@@ -446,7 +447,8 @@ td {
     margin-bottom: 0.5rem;
 }
 
-.livraison_title, .livraison_paraph {
+.livraison_title,
+.livraison_paraph {
     margin: 0.5rem 0 0 0;
     text-align: center;
 }
@@ -502,7 +504,7 @@ td {
 .newsletter .mail::placeholder {
     color: var(--blanc);
     font-size: 2rem;
-    font-family: 'graphikextralight', Arial, Helvetica, sans-serif;
+    font-family: "graphikextralight", Arial, Helvetica, sans-serif;
     font-weight: 200;
     -webkit-transition: all 0.2s ease-in;
     -moz-transition: all 0.2s ease-in;
@@ -515,16 +517,16 @@ td {
     color: transparent;
 }
 
-.newsletter input[type=submit] {
+.newsletter input[type="submit"] {
     background: 0;
     border: 0;
     outline: 0;
     color: var(--blanc);
-    font-size: .8rem;
+    font-size: 0.8rem;
 }
 
 .newsletter_infos_legales {
-    font-size: .8rem;
+    font-size: 0.8rem;
     color: var(--blanc);
 }
 
@@ -580,7 +582,6 @@ footer {
     display: block;
 }
 
-
 address {
     background-color: #e0e4ec;
     height: 65vh;
@@ -600,7 +601,8 @@ address {
     letter-spacing: 1px;
 }
 
-.adresse_rue, .adresse_ville {
+.adresse_rue,
+.adresse_ville {
     font-size: 4rem;
     font-family: "graphiklight", Arial, Helvetica, sans-serif;
     font-weight: 300;
@@ -649,7 +651,7 @@ address {
 
 /* Le before ne contient que la flèche devant tous les autres éléments du to-top, avec les mêmes propriétés de déplacement que le bloc sur lequel elle est placée */
 .to_top::before {
-    content: '↑';
+    content: "↑";
     font-size: 2rem;
     color: var(--noir);
     position: absolute;
@@ -668,7 +670,8 @@ address {
 }
 
 /* En hover, je n'ai besoin que de modifier la position absolue des deux pseudo-éléments ainsi que d'ajouter une box-shadow pour coller au modèle donné */
-.to_top:hover::before, .to_top:hover::after {
+.to_top:hover::before,
+.to_top:hover::after {
     left: -1px;
     top: -1px;
     box-shadow: rgba(0, 0, 0, 0.2) 0 0 10px;
@@ -676,9 +679,9 @@ address {
 
 /* Le media-query servira à détecter quand passer en mode responsive. J'aime bien le mettre à 1100px de max-width, c'est là que la plupart des ordinateurs s'arrêtent et que les tablettes commencent */
 @media all and (max-width: 1100px) {
-
     /* Cette partie servait à essayer de règler le problème d'espace blanc sur l'iPhone SE, sans succès. J'ai décidé malgré tout de la laisser car elle ne peut-être que bénéfique */
-    html, body {
+    html,
+    body {
         width: 100%;
         height: 100%;
         margin: 0px;
@@ -687,12 +690,14 @@ address {
     }
 
     .sponso_title {
-        margin-bottom: 0;
+        margin: 0;
     }
 
-    .sponso_title, .sponso p {
+    .sponso_title,
+    .sponso p {
         font-size: 0.8rem;
         text-align: center;
+        margin: 0.5rem 0;
     }
 
     .sponso p::first-letter {
@@ -709,7 +714,8 @@ address {
         height: 2rem;
     }
 
-    .nav_mobile, .header_mobile {
+    .nav_mobile,
+    .header_mobile {
         height: fit-content !important;
     }
 
@@ -743,7 +749,8 @@ address {
         position: relative;
     }
 
-    .sandwich_link::before, .sandwich_link::after {
+    .sandwich_link::before,
+    .sandwich_link::after {
         content: "";
         width: 50%;
         height: 1px;
@@ -780,7 +787,7 @@ address {
     .hero_cta {
         background-color: var(--blanc);
         color: var(--eye-catch-blue);
-        font-family: 'graphikmedium', Arial, Helvetica, sans-serif;
+        font-family: "graphikmedium", Arial, Helvetica, sans-serif;
         font-weight: 500;
         font-size: 0.8rem;
     }
@@ -802,7 +809,7 @@ address {
     .categ_cta {
         font-size: 0.8rem;
         padding: 2rem;
-        font-family: 'graphik_regularregular', Arial, Helvetica, sans-serif;
+        font-family: "graphik_regularregular", Arial, Helvetica, sans-serif;
         font-weight: 400;
     }
 
@@ -831,7 +838,7 @@ address {
     }
 
     .cadeau_web_text span {
-        font-family: 'graphikbold', Arial, Helvetica, sans-serif;
+        font-family: "graphikbold", Arial, Helvetica, sans-serif;
         font-weight: 700;
     }
 
@@ -847,7 +854,7 @@ address {
     .cadeau_web_cta {
         font-size: 0.7rem;
         padding: 1.5rem;
-        font-family: 'graphik_regularregular', Arial, Helvetica, sans-serif;
+        font-family: "graphik_regularregular", Arial, Helvetica, sans-serif;
         font-weight: 400;
     }
 
@@ -932,7 +939,7 @@ address {
     }
 
     .footer_link {
-        font-family: 'graphikmedium', Arial, Helvetica, sans-serif;
+        font-family: "graphikmedium", Arial, Helvetica, sans-serif;
         font-weight: 500;
     }
 
@@ -944,32 +951,12 @@ address {
         background-color: #88ecc4;
     }
 
-    .adresse_rue, .adresse_ville {
+    .adresse_rue,
+    .adresse_ville {
         font-size: 1.5rem;
     }
 
     .to_top {
         display: none;
     }
-}
-
-/* J'ai essayé beaucoup de fix possibles pour ce problème d'espace blanc sur l'iPhone SE, sans succès, pour le coup j'aimerais beaucoup avoir votre aide là-dessus */
-
-@media only screen and (-webkit-min-device-pixel-ratio: 1.5),
-only screen and (-o-min-device-pixel-ratio: 3/2),
-only screen and (min--moz-device-pixel-ratio: 1.5),
-only screen and (min-device-pixel-ratio: 1.5) {
-
-    html,
-    body {
-        width: 100vw !important;
-        width: 100% !important;
-        overflow-x: hidden !important;
-        box-sizing: border-box !important;
-    }
-
-    body * {
-        box-sizing: border-box !important;
-    }
-
 }
