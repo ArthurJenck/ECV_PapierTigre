@@ -1,345 +1,384 @@
 <!DOCTYPE html>
 <html lang="fr">
-  <head>
-    <!-- Encodage du jeu de caratères -->
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <!-- Lien vers le fichier CSS -->
-    <link rel="stylesheet" href="css/normalize.css" />
-    <link rel="stylesheet" type="text/css" href="css/style.css" />
-    <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css" />
-    <link
-      rel="stylesheet"
-      href="https://cdn-uicons.flaticon.com/uicons-regular-rounded/css/uicons-regular-rounded.css"
-    />
-    <link
-      rel="stylesheet"
-      href="https://fonts.googleapis.com/icon?family=Material+Icons"
-    />
-    <link
-      rel="stylesheet"
-      href="./fonts/webfontkit-20221003-103724/stylesheet.css"
-      class="css"
-    />
-    <link
-      rel="stylesheet"
-      href="./fonts/webfontkit-20221003-103923/stylesheet.css"
-      class="css"
-    />
-    <link
-      href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.3.0/css/font-awesome.css"
-      rel="stylesheet"
-      type="text/css"
-    />
-    <script
-      src="https://kit.fontawesome.com/bcc5e6c49a.js"
-      crossorigin="anonymous"
-    ></script>
-    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-    <script src="./js/main.js"></script>
-    <script>
-      AOS.init();
-    </script>
+    <head>
+        <!-- Encodage du jeu de caratères -->
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <!-- Lien vers le fichier CSS -->
+        <link rel="stylesheet" href="css/normalize.css" />
+        <link rel="stylesheet" type="text/css" href="css/style.css" />
+        <link
+            rel="stylesheet"
+            href="https://cdn-uicons.flaticon.com/uicons-regular-rounded/css/uicons-regular-rounded.css"
+        />
+        <link
+            rel="stylesheet"
+            href="https://fonts.googleapis.com/icon?family=Material+Icons"
+        />
+        <link
+            rel="stylesheet"
+            href="./fonts/webfontkit-20221003-103724/stylesheet.css"
+            class="css"
+        />
+        <link
+            rel="stylesheet"
+            href="./fonts/webfontkit-20221003-103923/stylesheet.css"
+            class="css"
+        />
+        <link
+            href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.3.0/css/font-awesome.css"
+            rel="stylesheet"
+            type="text/css"
+        />
+        <script
+            src="https://kit.fontawesome.com/bcc5e6c49a.js"
+            crossorigin="anonymous"
+        ></script>
+        <script src="./js/main.js"></script>
 
-    <!-- Le titre de la page html ; 70 caractères maxi ; Sert au SEO ; S'affiche dans l'onglet du navigateur -->
-    <title>
-      Papier Tigre : des articles de papeterie qui sortent de l'ordinaire
-    </title>
-    <link rel="icon" href="./img/favicon-16x16.png" />
-    <!-- Descrition de la page avec 156 caractères au maximum -->
-    <meta
-      name="description"
-      content="Des articles de papeterie qui sortent de l'ordinaire"
-    />
-  </head>
+        <!-- Le titre de la page html ; 70 caractères maxi ; Sert au SEO ; S'affiche dans l'onglet du navigateur -->
+        <title>
+            Papier Tigre : des articles de papeterie qui sortent de l'ordinaire
+        </title>
+        <link rel="icon" href="./img/favicon-16x16.png" />
+        <!-- Descrition de la page avec 156 caractères au maximum -->
+        <meta
+            name="description"
+            content="Des articles de papeterie qui sortent de l'ordinaire"
+        />
+    </head>
 
-  <body>
-    <!-- Le premier élément de la page est le bandeau promotionnel tout en haut de la page. Plutôt qu'une div, j'utilise une section sur laquelle je mets une classe sponso pour la retrouver. J'anticipe également le to_top en mettant un id #top -->
-    <section class="sponso" id="top">
-      <!-- Je choisis un h4 car le titre du bandeau pub n'est pas très important dans le concept de la page. J'ai également créé une classe bold_caps à cause de la font-face Graphik. En effet, pour mettre le texte en gras, il fallait changer la font-family en graphikbold, et c'était un gain de temps de créer une classe qui applique directement cette font-family -->
-      <h4 class="sponso_title bold_caps">Cadeau du web</h4>
-      <p>
-        une
-        <!-- Dans un contexte lambda de HTML, j'aurais mis une balise <b>, mais comme précisé plus tôt la font-face ne reconnaissait pas ses confrères bold, thin, etc. J'ai donc utilisé ma classe bold -->
-        <span class="bold">tablette de chocolat</span> de la marque
-        <span class="bold">Le Chocolat des français dès 45€ d'achats !</span>
-      </p>
-    </section>
+    <body>
+        <!-- Le premier élément de la page est le bandeau promotionnel tout en haut de la page. Plutôt qu'une div, j'utilise une section sur laquelle je mets une classe sponso pour la retrouver. J'anticipe également le to_top en mettant un id #top -->
+        <section class="sponso" id="top">
+            <!-- Je choisis un h4 car le titre du bandeau pub n'est pas très important dans le concept de la page. J'ai également créé une classe bold_caps à cause de la font-face Graphik. En effet, pour mettre le texte en gras, il fallait changer la font-family en graphikbold, et c'était un gain de temps de créer une classe qui applique directement cette font-family -->
+            <h4 class="sponso_title bold_caps">Cadeau du web</h4>
+            <p>
+                une
+                <!-- Dans un contexte lambda de HTML, j'aurais mis une balise <b>, mais comme précisé plus tôt la font-face ne reconnaissait pas ses confrères bold, thin, etc. J'ai donc utilisé ma classe bold -->
+                <span class="bold">tablette de chocolat</span> de la marque
+                <span class="bold"
+                    >Le Chocolat des français dès 45€ d'achats !</span
+                >
+            </p>
+        </section>
 
-    <!-- Plutôt que de réutiliser une balise <section>, je me sers de <header> qui a été créée pour ce cas. Pour le référencement, le W3C sera content de voir que mon site a bien un header -->
-    <header>
-      <!-- Il est de bonne pratique que le logo serve également de lien vers la page d'accueil. Je mets donc un lien vers mon index.html sur mon logo -->
-      <a href="index.html" class="logo_link">
-        <!-- Un logo n'a pas besoin d'attribut alt ni de title. En revanche, je lui mets une classe pour y accéder plus rapidement dans le CSS -->
-        <img src="./img/tigre.svg" alt="" class="logo" />
-      </a>
-      <!-- Pour ma barre de navigation, je pourrais utiliser une <ul>, mais ce serait rallonger mon code inutilement. Il est plus efficace d'utiliser la balise prévue à cet effet <nav> puis d'écrire une liste de liens que je mettrai en forme dans le CSS -->
-      <nav>
-        <ul class="nav_list">
-          <li>
-            <a href="#" class="nav_link">Nouveautés</a>
-          </li>
-          <li>
-            <a href="#" class="nav_link">Carnets</a>
-          </li>
-          <li>
-            <a href="#" class="nav_link">Agendas & Calendriers</a>
-          </li>
-          <li>
-            <a href="#" class="nav_link">Écriture & Accessoires</a>
-          </li>
-          <li>
-            <a href="#" class="nav_link">À propos</a>
-          </li>
-          <li>
-            <a href="#" class="nav_link">Entreprises</a>
-          </li>
-          <!-- Parmi les liens de la barre de nav, il y en a un particulier. Il ne s'agit pas d'un lien vers une autre page mais d'un sélecteur de langues. Je vais donc créer une <div> pour modifier les liens de choix de langue et ne pas gêner ma flexbox -->
-          <li>
-            <ul class="nav_language">
-              <!-- Je crée une classe current qui plus tard pourra être déplacée par javascript sur le lien de la langue sélectionnée et ainsi donner un rappel visuel de la langue actuellement utilisée par le site -->
-              <li>
-                <a href="#" class="nav_link nav_language_current">FR</a>
-              </li>
-              <li>
-                <a href="#" class="nav_link">EN</a>
-              </li>
+        <!-- Plutôt que de réutiliser une balise <section>, je me sers de <header> qui a été créée pour ce cas. Pour le référencement, le W3C sera content de voir que mon site a bien un header -->
+        <header>
+            <!-- Il est de bonne pratique que le logo serve également de lien vers la page d'accueil. Je mets donc un lien vers mon index.html sur mon logo -->
+            <a href="index.html" class="logo_link">
+                <!-- Un logo n'a pas besoin d'attribut alt ni de title. En revanche, je lui mets une classe pour y accéder plus rapidement dans le CSS -->
+                <img src="./img/tigre.svg" alt="" class="logo" />
+            </a>
+            <!-- Pour ma barre de navigation, je pourrais utiliser une <ul>, mais ce serait rallonger mon code inutilement. Il est plus efficace d'utiliser la balise prévue à cet effet <nav> puis d'écrire une liste de liens que je mettrai en forme dans le CSS -->
+            <nav>
+                <ul class="nav_list">
+                    <li>
+                        <a href="#" class="nav_link">Nouveautés</a>
+                    </li>
+                    <li>
+                        <a href="#" class="nav_link">Carnets</a>
+                    </li>
+                    <li>
+                        <a href="#" class="nav_link">Agendas & Calendriers</a>
+                    </li>
+                    <li>
+                        <a href="#" class="nav_link">Écriture & Accessoires</a>
+                    </li>
+                    <li>
+                        <a href="#" class="nav_link">À propos</a>
+                    </li>
+                    <li>
+                        <a href="#" class="nav_link">Entreprises</a>
+                    </li>
+                    <!-- Parmi les liens de la barre de nav, il y en a un particulier. Il ne s'agit pas d'un lien vers une autre page mais d'un sélecteur de langues. Je vais donc créer une <div> pour modifier les liens de choix de langue et ne pas gêner ma flexbox -->
+                    <li>
+                        <ul class="nav_language">
+                            <!-- Je crée une classe current qui plus tard pourra être déplacée par javascript sur le lien de la langue sélectionnée et ainsi donner un rappel visuel de la langue actuellement utilisée par le site -->
+                            <li>
+                                <a
+                                    href="#"
+                                    class="nav_link nav_language_current"
+                                    >FR</a
+                                >
+                            </li>
+                            <li>
+                                <a href="#" class="nav_link">EN</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <!-- Les prochains liens de la nav sont des icônes, j'ai ici utilisé FontAwesome -->
+                    <li>
+                        <a href="#" class="nav_link nav_icon"
+                            ><i class="fa-solid fa-magnifying-glass"></i
+                        ></a>
+                    </li>
+                    <li>
+                        <a href="#" class="nav_link nav_icon"
+                            ><i class="fa-regular fa-user"></i
+                        ></a>
+                    </li>
+                    <li>
+                        <a href="#" class="nav_link nav_icon"
+                            ><i class="fa-solid fa-bag-shopping"></i
+                        ></a>
+                    </li>
+                </ul>
+            </nav>
+        </header>
+
+        <section class="header_mobile">
+            <!-- Le client ne m'avait pas fourni toutes les assets visuelles donc je suis allé dans Illustrator et j'ai rogné l'un des fichiers SVG pour avoir le logo du modèle pour la version responsive -->
+            <img
+                src="./img/logo_nav_mobile.svg"
+                alt=""
+                class="header_mob_logo"
+            />
+            <ul class="nav_mobile">
+                <li>
+                    <a href="#" class="nav_link nav_icon"
+                        ><i class="fa-solid fa-magnifying-glass"></i
+                    ></a>
+                </li>
+                <li>
+                    <a href="#" class="nav_link nav_icon"
+                        ><i class="fa-regular fa-user"></i
+                    ></a>
+                </li>
+                <li>
+                    <a href="#" class="nav_link nav_icon"
+                        ><i class="fa-solid fa-bag-shopping"></i
+                    ></a>
+                </li>
+                <li>
+                    <a href="#" class="nav_link nav_icon sandwich_link">—</a>
+                </li>
             </ul>
-          </li>
-          <!-- Les prochains liens de la nav sont des icônes, j'ai ici utilisé FontAwesome -->
-          <li>
-            <a href="#" class="nav_link nav_icon"
-              ><i class="fa-solid fa-magnifying-glass"></i
-            ></a>
-          </li>
-          <li>
-            <a href="#" class="nav_link nav_icon"
-              ><i class="fa-regular fa-user"></i
-            ></a>
-          </li>
-          <li>
-            <a href="#" class="nav_link nav_icon"
-              ><i class="fa-solid fa-bag-shopping"></i
-            ></a>
-          </li>
-        </ul>
-      </nav>
-    </header>
+        </section>
 
-    <section class="header_mobile">
-      <!-- Le client ne m'avait pas fourni toutes les assets visuelles donc je suis allé dans Illustrator et j'ai rogné l'un des fichiers SVG pour avoir le logo du modèle pour la version responsive -->
-      <img src="./img/logo_nav_mobile.svg" alt="" class="header_mob_logo" />
-      <ul class="nav_mobile">
-        <li>
-          <a href="#" class="nav_link nav_icon"
-            ><i class="fa-solid fa-magnifying-glass"></i
-          ></a>
-        </li>
-        <li>
-          <a href="#" class="nav_link nav_icon"
-            ><i class="fa-regular fa-user"></i
-          ></a>
-        </li>
-        <li>
-          <a href="#" class="nav_link nav_icon"
-            ><i class="fa-solid fa-bag-shopping"></i
-          ></a>
-        </li>
-        <li>
-          <a href="#" class="nav_link nav_icon sandwich_link">—</a>
-        </li>
-      </ul>
-    </section>
+        <!-- Il n'y a pas de balise hero, donc j'utilise une section. Je n'inclus par l'image de fond dans le HTML car elle ne sera inclue dans le site que grâce au CSS dans un background-image -->
+        <section class="hero">
+            <!-- Suivant les conseils de ma prof préférée, Les agendas 2023 est maintenant mon h1 -->
+            <h1 class="hero_title bold_caps">Les agendas <span>2023</span></h1>
+            <!-- Pour le call-to-action de mon hero, et même du reste de mon site, je préfère utiliser des balises <a> plutôt que des <btn>, car il est bien plus facile et rapide de styliser un lien en button que de transformer un button en lien. -->
+            <a href="#" class="hero_cta caps">Voir la sélection</a>
+        </section>
 
-    <!-- Il n'y a pas de balise hero, donc j'utilise une section. Je n'inclus par l'image de fond dans le HTML car elle ne sera inclue dans le site que grâce au CSS dans un background-image -->
-    <section class="hero">
-      <!-- Suivant les conseils de ma prof préférée, Les agendas 2023 est maintenant mon h1 -->
-      <h1 class="hero_title bold_caps">Les agendas <span>2023</span></h1>
-      <!-- Pour le call-to-action de mon hero, et même du reste de mon site, je préfère utiliser des balises <a> plutôt que des <btn>, car il est bien plus facile et rapide de styliser un lien en button que de transformer un button en lien. -->
-      <a href="#" class="hero_cta caps">Voir la sélection</a>
-    </section>
+        <!-- Nouvelle section dans le site, qui va évoquer les catégories d'articles qui peuvent être trouvés sur le site, ce qui explique le nom que j'ai donné à ma class -->
+        <section class="categories">
+            <!-- Les trois parties de cette catégorie sont isolables, similaires en structure, et donc tombent sous la balise <article>. Le reste de la section a été faîte en copier/coller -->
+            <article class="categories_article">
+                <h3 class="categ_title caps">Nos nouveautés</h3>
+                <a href="#" class="categ_cta caps">Je découvre</a>
+            </article>
+            <article class="categories_article">
+                <h3 class="categ_title caps">Nos gourdes</h3>
+                <a href="#" class="categ_cta caps">J'en veux une</a>
+            </article>
+            <article class="categories_article">
+                <h3 class="categ_title caps">Color Inspiration Vol. 1</h3>
+                <a href="#" class="categ_cta caps">Je fonce</a>
+            </article>
+        </section>
 
-    <!-- Nouvelle section dans le site, qui va évoquer les catégories d'articles qui peuvent être trouvés sur le site, ce qui explique le nom que j'ai donné à ma class -->
-    <section class="categories">
-      <!-- Les trois parties de cette catégorie sont isolables, similaires en structure, et donc tombent sous la balise <article>. Le reste de la section a été faîte en copier/coller -->
-      <article class="categories_article">
-        <h3 class="categ_title caps">Nos nouveautés</h3>
-        <a href="#" class="categ_cta caps">Je découvre</a>
-      </article>
-      <article class="categories_article">
-        <h3 class="categ_title caps">Nos gourdes</h3>
-        <a href="#" class="categ_cta caps">J'en veux une</a>
-      </article>
-      <article class="categories_article">
-        <h3 class="categ_title caps">Color Inspiration Vol. 1</h3>
-        <a href="#" class="categ_cta caps">Je fonce</a>
-      </article>
-    </section>
+        <!-- Le site a une structure très simple à décomposer ; ce sont des sections qui se succèdent l'une à l'autre. Je reprends donc une <section> pour garder une cohérence tout au long de la structure de mon site -->
+        <section class="cadeau_web">
+            <!-- Je sais d'ors et déjà que je vais utiliser une flexbox pour le style de cette catégorie. Au préalable, j'ai aussi repéré quelles propriétés je devrai donner à ma flexbox, et donc je sais qu'il me faut un côté avec une <div> pour le texte, puis à côté la balise <img> -->
+            <div class="cadeau_web_text">
+                <h4 class="cadeau_web_title bold caps">Le cadeau du web</h4>
+                <p class="cadeau_web_chapo">
+                    Une tablette de chocolat de la marque
+                    <span>Le chocolat des Français</span> — Offerte dès 45€ !
+                </p>
+                <p class="cadeau_web_paraph">
+                    Ce puissant chocolat noir 71% bio s'associe au croquant de
+                    petits éclats de fèves torréfiées. Le palais est envahi par
+                    des arômes profonds de cacao.
+                </p>
+                <a href="#" class="cadeau_web_cta caps">J'en profite</a>
+            </div>
+            <!-- Cette image est utile à la compréhension de la section, donc je rajoute un alt pour permettre aux lecteurs d'écran de la décrire. J'ajoute aussi un title avec l'esprit amical du site -->
+            <img
+                src="./img/chocolat.jpeg"
+                alt="image de la tablette de chocolat cadeau"
+                class="cadeau_web_pic"
+                title="Cadeau du Web !"
+            />
+        </section>
 
-    <!-- Le site a une structure très simple à décomposer ; ce sont des sections qui se succèdent l'une à l'autre. Je reprends donc une <section> pour garder une cohérence tout au long de la structure de mon site -->
-    <section class="cadeau_web">
-      <!-- Je sais d'ors et déjà que je vais utiliser une flexbox pour le style de cette catégorie. Au préalable, j'ai aussi repéré quelles propriétés je devrai donner à ma flexbox, et donc je sais qu'il me faut un côté avec une <div> pour le texte, puis à côté la balise <img> -->
-      <div class="cadeau_web_text">
-        <h4 class="cadeau_web_title bold caps">Le cadeau du web</h4>
-        <p class="cadeau_web_chapo">
-          Une tablette de chocolat de la marque
-          <span>Le chocolat des Français</span> — Offerte dès 45€ !
-        </p>
-        <p class="cadeau_web_paraph">
-          Ce puissant chocolat noir 71% bio s'associe au croquant de petits
-          éclats de fèves torréfiées. Le palais est envahi par des arômes
-          profonds de cacao.
-        </p>
-        <a href="#" class="cadeau_web_cta caps">J'en profite</a>
-      </div>
-      <!-- Cette image est utile à la compréhension de la section, donc je rajoute un alt pour permettre aux lecteurs d'écran de la décrire. J'ajoute aussi un title avec l'esprit amical du site -->
-      <img
-        src="./img/chocolat.jpeg"
-        alt="image de la tablette de chocolat cadeau"
-        class="cadeau_web_pic"
-        title="Cadeau du Web !"
-      />
-    </section>
+        <!-- La prochaine section est composée exclusivement d'un tableau, mais pour décomposer la page au mieux et plus facilement fixer la taille de la-dite section, j'enveloppe la balise <table> d'une <section>. J'ai maintenant rajouté un attribut aria-label pour la meilleure compréhension possible de la section sans le h3 en display: none; -->
+        <section class="link_list" aria-label="Tableau de liens">
+            <table class="link_table">
+                <!-- Chaque ligne du tableau est définie par une balise <tr> pour Table Row -->
+                <tr>
+                    <!-- Dans chaque row, je mets des balises <td> pour chaque donnée, signifiant Table Data -->
+                    <td><a href="#" class="table_link">Nouveautés</a></td>
+                    <td><a href="#" class="table_link">Best Sellers</a></td>
+                    <td><a href="#" class="table_link">Carnets</a></td>
+                </tr>
+                <tr>
+                    <td><a href="#" class="table_link">Écriture</a></td>
+                    <td><a href="#" class="table_link">Jeux</a></td>
+                    <td><a href="#" class="table_link">Papeterie</a></td>
+                </tr>
+                <tr>
+                    <td>
+                        <a href="#" class="table_link">Agendas & Calendriers</a>
+                    </td>
+                    <td>
+                        <a href="#" class="table_link">Maisons & Accessoires</a>
+                    </td>
+                    <td>
+                        <a href="#" class="table_link">Pochettes & Trousses</a>
+                    </td>
+                </tr>
+            </table>
+        </section>
 
-    <!-- La prochaine section est composée exclusivement d'un tableau, mais pour décomposer la page au mieux et plus facilement fixer la taille de la-dite section, j'enveloppe la balise <table> d'une <section>. J'ai maintenant rajouté un attribut aria-label pour la meilleure compréhension possible de la section sans le h3 en display: none; -->
-    <section class="link_list" aria-label="Tableau de liens">
-      <table class="link_table">
-        <!-- Chaque ligne du tableau est définie par une balise <tr> pour Table Row -->
-        <tr>
-          <!-- Dans chaque row, je mets des balises <td> pour chaque donnée, signifiant Table Data -->
-          <td><a href="#" class="table_link">Nouveautés</a></td>
-          <td><a href="#" class="table_link">Best Sellers</a></td>
-          <td><a href="#" class="table_link">Carnets</a></td>
-        </tr>
-        <tr>
-          <td><a href="#" class="table_link">Écriture</a></td>
-          <td><a href="#" class="table_link">Jeux</a></td>
-          <td><a href="#" class="table_link">Papeterie</a></td>
-        </tr>
-        <tr>
-          <td><a href="#" class="table_link">Agendas & Calendriers</a></td>
-          <td><a href="#" class="table_link">Maisons & Accessoires</a></td>
-          <td><a href="#" class="table_link">Pochettes & Trousses</a></td>
-        </tr>
-      </table>
-    </section>
+        <!-- Ici, la section me servira en plus à avoir la couleur de fond sur toute la zone importante -->
+        <section class="produits">
+            <!-- Je veux que la vidéo s'affiche comme un gif, donc je n'active pas les contrôles du lecteur pour les utilisateurs, je mets un attribut autoplay pour que la vidéo se lance dès le chargement de la page, et enfin j'ajoute un attribut loop pour que la vidéo se répète -->
+            <video autoplay loop src="./img/madeinparis.mp4"></video>
+            <div class="produits_text">
+                <!-- Les titres qui suivent sont précédés d'icônes, mais il est plus pratique de les inclure en pseudo-éléments plutôt que de les mettre dans le HTML avec des balises <img> -->
+                <h5 class="produits_eye_catch bold caps">Made in paris</h5>
+                <h5 class="produits_eye_catch bold caps">Matériaux recyclés</h5>
+                <h5 class="produits_eye_catch bold caps">
+                    Pas de sur-stock inutiles
+                </h5>
+                <p class="produits_paraph">
+                    C'est au cœur du Marais, dans le troisième arrondissement de
+                    Paris que la magie opère. Nous maîotrisons le chemin de
+                    l'idée jusqu'à la vente avec beaucoup de passion, depuis nos
+                    deux adresses de la rue des Filles du calvaire.
+                </p>
+                <a href="#" class="produits_cta caps">Voir les produits</a>
+            </div>
+        </section>
 
-    <!-- Ici, la section me servira en plus à avoir la couleur de fond sur toute la zone importante -->
-    <section class="produits">
-      <!-- Je veux que la vidéo s'affiche comme un gif, donc je n'active pas les contrôles du lecteur pour les utilisateurs, je mets un attribut autoplay pour que la vidéo se lance dès le chargement de la page, et enfin j'ajoute un attribut loop pour que la vidéo se répète -->
-      <video autoplay loop src="./img/madeinparis.mp4"></video>
-      <div class="produits_text">
-        <!-- Les titres qui suivent sont précédés d'icônes, mais il est plus pratique de les inclure en pseudo-éléments plutôt que de les mettre dans le HTML avec des balises <img> -->
-        <h5 class="produits_eye_catch bold caps">Made in paris</h5>
-        <h5 class="produits_eye_catch bold caps">Matériaux recyclés</h5>
-        <h5 class="produits_eye_catch bold caps">Pas de sur-stock inutiles</h5>
-        <p class="produits_paraph">
-          C'est au cœur du Marais, dans le troisième arrondissement de Paris que
-          la magie opère. Nous maîotrisons le chemin de l'idée jusqu'à la vente
-          avec beaucoup de passion, depuis nos deux adresses de la rue des
-          Filles du calvaire.
-        </p>
-        <a href="#" class="produits_cta caps">Voir les produits</a>
-      </div>
-    </section>
+        <section class="livraison">
+            <!-- Là encore, les trois parties de la section concernant la livraison ont une structure différente et fonctionnent indépendamment les unes des autres. J'utilise encore la balise <article> -->
+            <article class="livraison_arti">
+                <!-- Cette fois-ci, les icônes sont importantes dans la structure de l'article, je décide donc de directement les inclure dans le HTML. De plus, ce sera ainsi plus simple de gèrer la disposition des blocks au sein de l'article -->
+                <img
+                    src="./img/camion_emoji.png"
+                    alt=""
+                    class="livraison_emote"
+                />
+                <h5 class="livraison_title bold caps">
+                    Livraison à partir de 4,50€
+                </h5>
+                <p class="livraison_paraph caps">
+                    Partout en france métropolitaine
+                </p>
+            </article>
+            <article class="livraison_arti">
+                <img
+                    src="./img/carton_emoji.png"
+                    alt=""
+                    class="livraison_emote"
+                />
+                <h5 class="livraison_title bold caps">
+                    Livraison offerte en point relais
+                </h5>
+                <p class="livraison_paraph caps">à partir de 50€ d'achat</p>
+            </article>
+            <article class="livraison_arti">
+                <img
+                    src="./img/caddie_emoji.png"
+                    alt=""
+                    class="livraison_emote"
+                />
+                <h5 class="livraison_title bold caps">
+                    Retirez vos commandes gratuitement dans notre boutique
+                    parisienne
+                </h5>
+            </article>
+        </section>
 
-    <section class="livraison">
-      <!-- Là encore, les trois parties de la section concernant la livraison ont une structure différente et fonctionnent indépendamment les unes des autres. J'utilise encore la balise <article> -->
-      <article class="livraison_arti">
-        <!-- Cette fois-ci, les icônes sont importantes dans la structure de l'article, je décide donc de directement les inclure dans le HTML. De plus, ce sera ainsi plus simple de gèrer la disposition des blocks au sein de l'article -->
-        <img src="./img/camion_emoji.png" alt="" class="livraison_emote" />
-        <h5 class="livraison_title bold caps">Livraison à partir de 4,50€</h5>
-        <p class="livraison_paraph caps">Partout en france métropolitaine</p>
-      </article>
-      <article class="livraison_arti">
-        <img src="./img/carton_emoji.png" alt="" class="livraison_emote" />
-        <h5 class="livraison_title bold caps">
-          Livraison offerte en point relais
-        </h5>
-        <p class="livraison_paraph caps">à partir de 50€ d'achat</p>
-      </article>
-      <article class="livraison_arti">
-        <img src="./img/caddie_emoji.png" alt="" class="livraison_emote" />
-        <h5 class="livraison_title bold caps">
-          Retirez vos commandes gratuitement dans notre boutique parisienne
-        </h5>
-      </article>
-    </section>
+        <section class="newsletter">
+            <h3 class="newsletter_flavor">Keep in touch</h3>
+            <!-- La partie principale de la section newsletter a une zone de texte permettant d'envoyer son adresse-mail, je vais alors créer une div dans laquelle se trouvera un formulaire -->
+            <div class="newsletter_content">
+                <!-- J'ai enlevé l'attribut action, non nécessaire au W3C et ai pour le moment mis une valeur get sur la method. Tout sera remplacé quand le client me dira les valeurs qu'il désire et les liens vers la base mySQL -->
+                <form class="mail_form" method="get">
+                    <!-- Pour permettre aux utilisateurs d'écrire, je mets un input.  -->
+                    <input
+                        type="email"
+                        class="mail"
+                        placeholder="Votre adresse-mail"
+                        pattern="*@*.com|fr"
+                        required
+                    />
+                    <!-- J'ajoute un bouton pour soumettre le formulaire de l'adresse-mail.  -->
+                    <input type="submit" />
+                </form>
+                <p class="newsletter_infos_legales">
+                    Vous pouvez vous désinscrire à tout moment. Vous trouverez
+                    pour cela nos informations de contact dans les conditions
+                    d'utilisation du site.
+                </p>
+            </div>
+        </section>
 
-    <section class="newsletter">
-      <h3 class="newsletter_flavor">Keep in touch</h3>
-      <!-- La partie principale de la section newsletter a une zone de texte permettant d'envoyer son adresse-mail, je vais alors créer une div dans laquelle se trouvera un formulaire -->
-      <div class="newsletter_content">
-        <!-- J'ai enlevé l'attribut action, non nécessaire au W3C et ai pour le moment mis une valeur get sur la method. Tout sera remplacé quand le client me dira les valeurs qu'il désire et les liens vers la base mySQL -->
-        <form class="mail_form" method="get">
-          <!-- Pour permettre aux utilisateurs d'écrire, je mets un input.  -->
-          <input
-            type="email"
-            class="mail"
-            placeholder="Votre adresse-mail"
-            pattern="*@*.com|fr"
-            required
-          />
-          <!-- J'ajoute un bouton pour soumettre le formulaire de l'adresse-mail.  -->
-          <input type="submit" />
-        </form>
-        <p class="newsletter_infos_legales">
-          Vous pouvez vous désinscrire à tout moment. Vous trouverez pour cela
-          nos informations de contact dans les conditions d'utilisation du site.
-        </p>
-      </div>
-    </section>
+        <footer>
+            <div class="footer_categ">
+                <ul class="footer_list">
+                    <li><a href="#" class="footer_link">Instagram</a></li>
+                    <li><a href="#" class="footer_link">Facebook</a></li>
+                    <li><a href="#" class="footer_link">Contactez-nous</a></li>
+                </ul>
+            </div>
+            <div class="footer_categ">
+                <ul class="footer_list">
+                    <li><a href="#" class="footer_link">Qui sommes-nous</a></li>
+                    <li><a href="#" class="footer_link">Boutique Paris</a></li>
+                    <li><a href="#" class="footer_link">Boutique Tokyo</a></li>
+                    <li><a href="#" class="footer_link">Le studio</a></li>
+                    <li><a href="#" class="footer_link">L'atelier</a></li>
+                </ul>
+            </div>
+            <div class="footer_categ">
+                <ul class="footer_list">
+                    <li><a href="#" class="footer_link">Livraison</a></li>
+                    <li><a href="#" class="footer_link">FAQ</a></li>
+                    <li><a href="#" class="footer_link">Jobs</a></li>
+                </ul>
+            </div>
+            <div class="footer_categ">
+                <ul class="footer_list">
+                    <li>
+                        <a href="#" class="footer_link">Mentions Légales</a>
+                    </li>
+                    <li>
+                        <a href="#" class="footer_link"
+                            >Politique de confidentialité</a
+                        >
+                    </li>
+                    <li><a href="#" class="footer_link">CGV</a></li>
+                    <li>
+                        <a href="#" class="footer_link">Paiement sécurisé</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="footer_categ">
+                <img src="./img/papier-tigre.svg" alt="" class="footer_logo" />
+            </div>
+        </footer>
 
-    <footer>
-      <div class="footer_categ">
-        <ul class="footer_list">
-          <li><a href="#" class="footer_link">Instagram</a></li>
-          <li><a href="#" class="footer_link">Facebook</a></li>
-          <li><a href="#" class="footer_link">Contactez-nous</a></li>
-        </ul>
-      </div>
-      <div class="footer_categ">
-        <ul class="footer_list">
-          <li><a href="#" class="footer_link">Qui sommes-nous</a></li>
-          <li><a href="#" class="footer_link">Boutique Paris</a></li>
-          <li><a href="#" class="footer_link">Boutique Tokyo</a></li>
-          <li><a href="#" class="footer_link">Le studio</a></li>
-          <li><a href="#" class="footer_link">L'atelier</a></li>
-        </ul>
-      </div>
-      <div class="footer_categ">
-        <ul class="footer_list">
-          <li><a href="#" class="footer_link">Livraison</a></li>
-          <li><a href="#" class="footer_link">FAQ</a></li>
-          <li><a href="#" class="footer_link">Jobs</a></li>
-        </ul>
-      </div>
-      <div class="footer_categ">
-        <ul class="footer_list">
-          <li><a href="#" class="footer_link">Mentions Légales</a></li>
-          <li>
-            <a href="#" class="footer_link">Politique de confidentialité</a>
-          </li>
-          <li><a href="#" class="footer_link">CGV</a></li>
-          <li><a href="#" class="footer_link">Paiement sécurisé</a></li>
-        </ul>
-      </div>
-      <div class="footer_categ">
-        <img src="./img/papier-tigre.svg" alt="" class="footer_logo" />
-      </div>
-    </footer>
+        <address>
+            <h6 class="adresse_title caps">Boutique de Paris</h6>
+            <p class="adresse_rue">5 Rue des Filles du Calvaire</p>
+            <p class="adresse_ville">75003 Paris - France</p>
+            <p class="credits caps">
+                2022 - Made by Arthur Jenck for Papier Tigre
+            </p>
+        </address>
 
-    <address>
-      <h6 class="adresse_title caps">Boutique de Paris</h6>
-      <p class="adresse_rue">5 Rue des Filles du Calvaire</p>
-      <p class="adresse_ville">75003 Paris - France</p>
-      <p class="credits caps">2022 - Made by Arthur Jenck for Papier Tigre</p>
-    </address>
-
-    <!-- J'ai décidé d'intégrer ma div de to-top à la fin de mon code, parce que pourquoi pas -->
-    <div class="to_top_container">
-      <a href="#top" class="to_top"></a>
-    </div>
-  </body>
+        <!-- J'ai décidé d'intégrer ma div de to-top à la fin de mon code, parce que pourquoi pas -->
+        <div class="to_top_container">
+            <a href="#top" class="to_top"></a>
+        </div>
+    </body>
 </html>
